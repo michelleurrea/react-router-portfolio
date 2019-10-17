@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import {BrowserRouter as Router, Route } from 'react-router-dom'
+import About from './pages/About';
+import Home from './pages/Home';
+import Blog from './pages/Blog';
+import Projects from './pages/Projects';
+import Nav from './components/Nav';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+let postDate = [
+  {
+    author: 'Michelle',
+    date: 'Sunday, September 7th',
+    body: 'Sunday brunch was delicious!'
+  },
+  {
+    author: 'Samantha',
+    date: 'Sunday, September 7th',
+    body: 'I had an amazing time in Chelan!'
+  }
+]
+
+class App extends Component {
+  state = {
+      post: postDate
+    }
+
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <Router>
+            <Nav />
+            <br></br>
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/blog" render={() => <Blog post={this.state.post}/>}/>
+            <Route path="/projects" component={Projects}/>
+          </Router>
+        </header>
+      </div>
+    );
+  }
 }
 
 export default App;

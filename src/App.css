@@ -2,14 +2,10 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
 .App-header {
-  background-color: #282c34;
+  background-image: url("https://static.vecteezy.com/system/resources/previews/000/096/100/non_2x/abstract-butterfly-background-vector.jpg");
+  background-repeat: no-repeat;
+  background-size: 185vh 120vh;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -23,11 +19,30 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav {
+  background-color: white;
+  padding: 10px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline;
+  padding: 10px;
+}
+
+.clickedLink {
+  text-decoration: none;
+}
+
+.content {
+  background-color: white;
+  color: purple;
+  padding: 20px;
+  font-family: fantasy;
+  max-width: 300px;
 }
